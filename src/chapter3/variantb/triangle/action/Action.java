@@ -47,6 +47,12 @@ public class Action {
 
         return (s == halfAB);
     }
+    
+     //Произвольный 
+    public static boolean isArbitrary(Triangle triangle) {
+        return !isIsosceles(triangle) && !isEquilateral(triangle) && !isRight(triangle);
+    }
+    
 
     public static int equilateralCount(List<Triangle> triangles) {
         checkNull(triangles);
@@ -114,7 +120,29 @@ public class Action {
 
         return sum;
     }
+    public static int arbitraryCount(List<Triangle> triangles) {
+        checkNull(triangles);
 
+        Triangle[] trianglesArray = new Triangle[triangles.size()];
+        trianglesArray = triangles.toArray(trianglesArray);
+
+        return arbitraryCount(trianglesArray);
+    }
+
+    public static int arbitraryCount(Triangle... triangles) {
+        checkNull(triangles);
+
+        int sum = 0;
+
+        for (Triangle triangle : triangles) {
+            if (isArbitrary(triangle)) {
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+    
     public static Triangle getMaxAreaTriangle(List<Triangle> triangles) {
         checkNull(triangles);
 
