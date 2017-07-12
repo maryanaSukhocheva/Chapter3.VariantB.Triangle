@@ -29,7 +29,7 @@ public class Action {
     }
 
     //Прямоугольный (площадь = половина произведения катетов)
-    public static boolean isRight(Triangle triangle) {
+    public static boolean isRect(Triangle triangle) {
         checkNull(triangle);
         double a = triangle.getA();
         double b = triangle.getB();
@@ -50,7 +50,7 @@ public class Action {
     
      //Произвольный 
     public static boolean isArbitrary(Triangle triangle) {
-        return !isIsosceles(triangle) && !isEquilateral(triangle) && !isRight(triangle);
+        return !isIsosceles(triangle) && !isEquilateral(triangle) && !isRect(triangle);
     }
     
 
@@ -100,20 +100,20 @@ public class Action {
         return sum;
     }
 
-    public static int rightCount(List<Triangle> triangles) {
+    public static int rectCount(List<Triangle> triangles) {
         checkNull(triangles);
 
         Triangle[] trianglesArray = new Triangle[triangles.size()];
         trianglesArray = triangles.toArray(trianglesArray);
 
-        return rightCount(trianglesArray);
+        return rectCount(trianglesArray);
     }
 
-    public static int rightCount(Triangle... trianglesArray) {
+    public static int rectCount(Triangle... trianglesArray) {
         int sum = 0;
 
         for (Triangle triangle : trianglesArray) {
-            if (isRight(triangle)) {
+            if (isRect(triangle)) {
                 sum++;
             }
         }
