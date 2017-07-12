@@ -9,6 +9,7 @@ import java.util.List;
  * @author Sukhocheva Maryana
  */
 public class InputData {
+     
     public static  List<Triangle> generationTriangles(){
       List<Triangle> arrayOfTriangles = new ArrayList<>();
       try {

@@ -8,6 +8,7 @@ import java.util.List;
  * @author Sukhocheva Maryana
  */
 public class OutputData {
+   //вывод площади и периметра треугольников
     public static void outputAreaPerimetr(List<Triangle> triangles) {
     for (Triangle triangle : triangles) {
             System.out.println(triangle);

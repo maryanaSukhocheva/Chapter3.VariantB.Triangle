@@ -53,7 +53,7 @@ public class Action {
         return !isIsosceles(triangle) && !isEquilateral(triangle) && !isRect(triangle);
     }
     
-
+//количество равносторонних треугольников
     public static int equilateralCount(List<Triangle> triangles) {
         checkNull(triangles);
 
@@ -76,7 +76,7 @@ public class Action {
 
         return sum;
     }
-
+        //количество равнобедренных треугольников
     public static int isoscelesCount(List<Triangle> triangles) {
         checkNull(triangles);
 
@@ -99,7 +99,7 @@ public class Action {
 
         return sum;
     }
-
+    //количество прямоугольных треугольников
     public static int rectCount(List<Triangle> triangles) {
         checkNull(triangles);
 
@@ -120,6 +120,8 @@ public class Action {
 
         return sum;
     }
+     
+        //количество произвольных треугольников
     public static int arbitraryCount(List<Triangle> triangles) {
         checkNull(triangles);
 
@@ -142,7 +144,7 @@ public class Action {
 
         return sum;
     }
-    
+     // Наибольший по площади объект
     public static Triangle getMaxAreaTriangle(List<Triangle> triangles) {
         checkNull(triangles);
 
@@ -165,13 +167,13 @@ public class Action {
 
         return maxAreaTriangle;
     }
-
+    //Наименьший по площади объект
     public static Triangle getMinAreaTriangle(List<Triangle> triangles) {
         checkNull(triangles);
 
         Triangle[] trianglesArray = new Triangle[triangles.size()];
         trianglesArray = triangles.toArray(trianglesArray);
-
+   
         return getMinAreaTriangle(trianglesArray);
     }
 
